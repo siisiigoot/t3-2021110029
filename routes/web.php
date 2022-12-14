@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
+
+Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
+Route::get('/setNull',[DashboardController::class, 'setNull'])->name('setNull');
+Route::get('/setAuthorId',[DashboardController::class, 'setAuthorId'])->name('setAuthorId');
+
+Route::resource('books', BookController::class);
+Route::resource('authors', AuthorController::class);
