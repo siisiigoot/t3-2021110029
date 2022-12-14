@@ -46,7 +46,7 @@ class BookController extends Controller
     {
         //
         $rules = [
-            'id' => 'required|max:13',
+            'id' => 'required|digits:13',
             'judul' => 'required|max:255',
             'halaman' => 'required|integer|min:0|max:1000',
             'kategori' => 'required|max:255',

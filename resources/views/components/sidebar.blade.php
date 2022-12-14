@@ -11,7 +11,7 @@
         {{-- Separator END --}}
         <a
             href="{{ route('dashboard') }}"
-            class="bg-dark list-group-item list-group-item-action">
+            class="bg-dark list-group-item list-group-item-action {{  Route::is('dashboard') ? 'active' : '' }}">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-film fa-fw mr-3"></span>
                 <span class="menu-collapsed">Dashboard</span>
@@ -26,7 +26,7 @@
         {{-- Separator END --}}
         <a
             href="{{ route('books.index') }}"
-            class="bg-dark list-group-item list-group-item-action">
+            class="bg-dark list-group-item list-group-item-action nav-link {{  Route::is('books.index','books.create','books.show','books.edit') ? 'active' : '' }}">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-film fa-fw mr-3"></span>
                 <span class="menu-collapsed">Daftar Buku</span>
@@ -34,7 +34,7 @@
         </a>
         <a
             href="{{ route('authors.index') }}"
-            class="bg-dark list-group-item list-group-item-action">
+            class="bg-dark list-group-item list-group-item-action {{  Route::is('authors.index','authors.create','authors.show','authors.edit') ? 'active' : '' }}">
             <div class="d-flex w-100 justify-content-start align-items-center">
                 <span class="fa fa-film fa-fw mr-3"></span>
                 <span class="menu-collapsed">Daftar Penulis</span>
